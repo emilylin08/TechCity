@@ -1,0 +1,4 @@
+<?
+    $user = "Hello";
+    echo $user;
+?>

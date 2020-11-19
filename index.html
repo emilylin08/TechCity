@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>TechCity</title>
+    <link rel=" stylesheet" href=" style.css" /> <!--connect html file with css file--->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet"> 
+    
+</head>
+
+
+
+<!--verything in body will be displayed in webpage-->
+<body>
+    
+    <div class = "container">
+        
+        <div class= "Navbar">
+            <div class="logo">
+                <img src="images\logo.png" width="150px">
+                </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href = "index.html">HOME</a></li>
+                <li><a href = "store.html">STORE</a></li>
+                <li><a href = "myaccount.html">MY ACCOUNT</a></li>
+                <li><a href = "shoppingcart.html">SHOPPING CART</a></li>
+            </ul>
+            <hr>
+        </nav>
+        <img src="images\menuicon.png" class="menu-icon" 
+             onclick = "menutoggle()">
+    </div>
+    
+    <div class = "row">
+        <div class = "col-1">
+            <h1>TechCity Project by:</h1>
+            <a style ="margin-left:20px"> Emily Lin, Tin Nguyen, Nico Velasco <br>Claudio Salazar, Diana Hernandez, Aleena Salas</a>        
+        </div>
+        <div class = "col-1">
+            <img src="images/homepage.png">
+        </div>
+        <a style = "margin-left:40px" href="" class="btn"> Shop Now! &#10148;</a>
+
+    </div>
+    
+<!------ FEATURED CATEGORIES-------->
+        <div class="categories">
+            
+            <div class=".small-container">
+                <h1>Featured Products</h1>
+                <div class = "row">
+                    <div class="col-3">
+                        <img src="images/WacomMobilePro16.jpg">
+                        </div>
+                    <div class="col-3">
+                        <img src="images/MacPro16.jpg">
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        
+<!---------FOOTER----------->
+        <div class = "footer">
+            <div class="container">
+                <hr>
+                <a style ="margin-left:20px"> Fall 2020 ISDS 454 <br> Group3</a> 
+                </div>
+            </div>
+        </div>
+<!---js for toggle menu--->
+    <script>
+        var MenuItems = document.getElementByID("MenuItems");
+        
+        MenuItems.style.maxHeight = "0px";
+        
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+    </script>
+    
+</body>
+</html>

@@ -24,10 +24,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])){
                 </div>
         <nav>
             <ul id="MenuItems">
-                <li><a href = "index.html">HOME</a></li>
-                <li><a href = "store.html">STORE</a></li>
+                <li><a href = "index.php">HOME</a></li>
+                <li><a href = "store.php">STORE</a></li>
                 <li><a href = "signin.php">MY ACCOUNT</a></li>
-                <li><a href = "shoppingcart.html">SHOPPING CART</a></li>
+                <li><a href = "shoppingcart.php">SHOPPING CART</a></li>
             </ul>
             <hr>
         </nav>

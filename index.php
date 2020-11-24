@@ -3,18 +3,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>All Products - Techcity</title>
+    <title>TechCity</title>
     <link rel=" stylesheet" href=" style.css" /> <!--connect html file with css file--->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet"> 
+    
 </head>
 
 
-    
+
 <!--verything in body will be displayed in webpage-->
 <body>
-    
-    
     
     <div class = "container">
         
@@ -34,44 +33,36 @@
         <img src="images\menuicon.png" class="menu-icon" 
              onclick = "menutoggle()">
     </div>
-
-        
-<!----- THIS SECTION CHANGES!!!!------------>
-Displaying all products in database...
-<table>
-    <tr>
-        <th>Name </th>
-        <th>Type </th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Cost</th>
-        <br>
-        <hr>
-    </tr>
-    <?php
-        include "db_conn.php";
-        $sql = "SELECT * from inventory";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
-        
-        if($resultCheck >0)
-        {
-        while($row = mysqli_fetch_assoc($result)){
-            echo $row['ProductName']. "<br>";
-        }
-        }
-        ?>
-</table>
-<!--BUTTONS---> 
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
+    
+    <div class = "row">
+        <div class = "col-1">
+            <h1>TechCity Project by:</h1>
+            <a style ="margin-left:20px"> Emily Lin, Tin Nguyen, Nico Velasco <br>Claudio Salazar, Diana Hernandez, Aleena Salas</a>        
         </div>
-    </div>
+        <div class = "col-1">
+            <img src="images/homepage.png">
+        </div>
+        <a style = "margin-left:40px" href="store.html" class="btn"> Shop Now! &#10148;</a>
 
+    </div>
+    <br><hr>
+<!------ FEATURED CATEGORIES-------->
+        <div class="categories">
+            
+            <div class=".small-container">
+                <h1>Featured Products</h1>
+                <div class = "row">
+                    <div class="col-3">
+                        <img src="images/WacomMobilePro16.jpg">
+                        </div>
+                    <div class="col-3">
+                        <img src="images/MacPro16.jpg">
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+        
 <!---------FOOTER----------->
         <div class = "footer">
             <div class="container">

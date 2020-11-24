@@ -189,7 +189,25 @@ select:focus{
     background: #ADD8E6;
     color: #fff;
 }
+
+
+#frm{
+    border:solid gray 1px;
+    width: 20%;
+    border-radius: 5px;
+    margin: 100px auto;
+    background: white;
+}
+
+
+.error{
+    background: #F2DeDe;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
     
+}
 
 /*----- media query for menu----*/
 @media only screen and (max-width: 800px){

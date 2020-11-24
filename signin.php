@@ -13,9 +13,7 @@
     
 <!--verything in body will be displayed in webpage-->
 <body>
-    
-    
-    
+
     <div class = "container">
         
         <div class= "Navbar">
@@ -35,41 +33,31 @@
              onclick = "menutoggle()">
     </div>
 
-        
-<!----- THIS SECTION CHANGES!!!!------------>
-    <div class="categories">
-            
-        <div class=".small-container">
-            <div class = "row row-2">
-            <h1 style="text-align:center">Featured Products</h1>
-                <select>
-                <option>Default Sorting</option>
-                <option>Sort by price</option>
-                <option>Sort by Popularity</option>
-                </select>
-            </div>
-            
-            <div class = "row">
-                  <div class="col-3">
-                    <img src="images/WacomMobilePro16.jpg">
-                    
-                    <a style = "margin-left:40px" href="" class="btnshop"> Add to cart</a>
-                    </div>
-                 <div class="col-3">
-                    <img src="images/MacPro16.jpg">
-                    </div>
-            </div>
-            </div>
-        
-<!--BUTTONS---> 
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
-        </div>
-    </div>
+<html>
+
+<!---------TEXT----------->
+
+<form action="login.php" method="post">
+ <a>
+   <h1 href = "">Sign in</h1>
+   
+   <?php if (isset($_GET['error'])) { ?>
+       <p class="error"><?php echo $_GET['error']; ?></p>
+   <?php } ?>
+    
+    <label>Username:</label>
+      <input type="text" id="username" name="uname" placeholder = "User Name"><br>
+    <label>Password: </label>
+      <input type="text" id="password" name="password" placeholder="Password">
+      <br>
+    <input type="submit" id="btn" value="Login">
+  </a>
+</form>
+    
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/login.php".</p>
+
+</html>  
 
 <!---------FOOTER----------->
         <div class = "footer">

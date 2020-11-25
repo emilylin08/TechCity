@@ -213,7 +213,13 @@ select:focus{
     border-radius: 5px; 
 }
 
-
+.msg{
+    background: #F2DeDe;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px; 
+}
 /*----- Dynamic position for menu----*/
 @media only screen and (max-width: 800px){
     nav ul{

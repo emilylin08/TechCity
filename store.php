@@ -2,8 +2,24 @@
 include('include/header.php');
 ?>
 
+<!------ FEATURED CATEGORIES-------->
+        <div class="categories">
+            
+            <div class=".small-container">
+                <h1>Featured Products</h1>
+                <div class = "row">
+                    <div class="col-3">
+                        <img src="images/WacomMobilePro16.jpg">
+                        </div>
+                    <div class="col-3">
+                        <img src="images/MacPro16.jpg">
+                        </div>
+                </div>
+            </div>
+        </div>
         
-<!----- THIS SECTION CHANGES!!!!------------>
+        
+<!----- Store!!!!------------>
 Displaying all products in database...
 <table>
     <tr>

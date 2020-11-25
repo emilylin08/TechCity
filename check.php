@@ -19,8 +19,6 @@
         $uname = validate($_POST['uname']);
         $pass = validate($_POST['password']);
         
-        echo $uname;
-        echo $pass;
         if(empty($uname)){
             header("Location: signin.php?error=User Name is required");
             exit();
@@ -42,15 +40,25 @@
             	header("Location: create_account.php?error=Username Taken!");
                     exit();
             }else{
-                //USERNAME DOES NOT EXIST PROCEED WITH ACCOUNT CREATION
-                echo "incorrect data";
+                //idk what this is
                     header("Location: create_account.php?error=Incorrect Username or Password");
                     exit();
                 }
                 
             }
             else{
-             header("Location: create_account.php?error=Incorrect Username or Password");
+             //USERNAME DOES NOT EXIST Account created
+             header("Location: create_account.php?error=Account Created");
+             $_SESSION['username'] = $uname;
+             $_SESSION['username'] = $pass;
+                
+             //blahblah figure out how to point to end of table
+             $sql = "INSERT INTO customer (user_name, password) VALUES ('$uname', '$pass')"; 
+             if ($conn->query($sql) === TRUE) {
+                  echo "New record created successfully";
+                } else {
+                  echo "Error: " . $sql . "<br>" . $conn->error;
+                }
              exit();
           }
             }

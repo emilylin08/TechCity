@@ -19,7 +19,7 @@
             <label>Password: </label>
               <input type="text" id="password" name="password" placeholder="Password">
               <br>
-            <input type="submit" id="btn" value="Login">
+            <input type="submit" class="btn" value="Login">
           </a>
         </form>
     </div>

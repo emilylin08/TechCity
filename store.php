@@ -20,7 +20,7 @@ include('include/header.php');
         
         
 <!----- Store!!!!------------>
-Displaying all products in database...
+<h1>Displaying all products in database...</h1>
 <table>
     <tr>
         <th>Name </th>

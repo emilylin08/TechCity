@@ -11,7 +11,7 @@
             <img src="images/homepage.png">
         </div>
         <a style = "margin-left:40px" href="store.php" class="btn"> Shop Now! &#10148;</a>
-
+        <br>
     </div>
     <br>
 

@@ -23,12 +23,14 @@ include('include/header.php');
             
             <div class = "row row-2">
             <a></a>
-            <a style = "margin-left:40px" href="store.html" class="btn"> Keep Shopping &#10148;</a>
+            <a style = "margin-left:40px" href="store.php" class="btn"> Keep Shopping &#10148;</a>
             </div>
             
             </div>
             </div>
 
+
+<!------ FOOTER-------->  
 <?php
         include('include/footer.php');
 ?>

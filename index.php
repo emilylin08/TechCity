@@ -1,7 +1,7 @@
-<?php
-include('include/header.php');
-?>
-    
+<!---------HEADER----------->
+<?php include('include/header.php');?>
+       
+<!---------MAIN PAGE----------->  
     <div class = "row">
         <div class = "col-1">
             <h1>TechCity Project by:</h1>
@@ -10,7 +10,7 @@ include('include/header.php');
         <div class = "col-1">
             <img src="images/homepage.png">
         </div>
-        <a style = "margin-left:40px" href="store.html" class="btn"> Shop Now! &#10148;</a>
+        <a style = "margin-left:40px" href="store.php" class="btn"> Shop Now! &#10148;</a>
 
     </div>
     <br><hr>
@@ -29,8 +29,8 @@ include('include/header.php');
                 </div>
             </div>
         </div>
-        
-        
+
+<!------ FOOTER-------->     
 <?php
         include('include/footer.php');
 ?>

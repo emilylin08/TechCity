@@ -29,6 +29,8 @@ Displaying all products in database...
         }
         ?>
 </table>
+
+
 <!--BUTTONS---> 
         <div class="page-btn">
             <span>1</span>
@@ -39,6 +41,7 @@ Displaying all products in database...
         </div>
     </div>
 
+<!------ FOOTER-------->  
 <?php
         include('include/footer.php');
 ?>

@@ -18,9 +18,6 @@
         
         $uname = validate($_POST['uname']);
         $pass = validate($_POST['password']);
-        
-        echo $uname;
-        echo $pass;
         if(empty($uname)){
             header("Location: signin.php?error=User Name is required");
             exit();
@@ -46,20 +43,20 @@
                 
             }else{
                 echo "inncorect data";
-                    header("Location: signin.php?error=Incorrect Username or Password");
+                    header("Location: signin.php?error=Incorrect Username <br>or Password");
                     exit();
                 }
                 
             }
             else{
-             header("Location: signin.php?error=Incorrect Username or Password");
+             header("Location: signin.php?error=Incorrect Username <br>or Password");
              exit();
           }
             }
         }
     else
     {
-        echo "inccorect";
+        echo "incorrect";
         header("Location: signin.php");
         exit();
     }

@@ -1,52 +1,14 @@
-<?php 
-session_start();
+<!---------HEADER----------->
+<?php include('include/header.php');?>
 
-if (isset($_SESSION['id']) && isset($_SESSION['username'])){
-?>
- 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>All Products - Techcity</title>
-    <link rel=" stylesheet" href=" style.css" /> <!--connect html file with css file--->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet"> 
-</head>
-
-
-    
-<!--HEADER-->
-<body>
-    <div class = "container">
-        <div class= "Navbar">
-            <div class="logo">
-                <img src="images\logo.png" width="150px">
-                </div>
-        <nav>
-            <ul id="MenuItems">
-                <li><a href = "index.php">HOME</a></li>
-                <li><a href = "store.php">STORE</a></li>
-                <li><a href = "signin.php">MY ACCOUNT</a></li>
-                <li><a href = "shoppingcart.php">SHOPPING CART</a></li>
-            </ul>
-            <hr>
-        </nav>
-        <img src="images\menuicon.png" class="menu-icon" 
-             onclick = "menutoggle()">  
-    </div>
-    
-    <h1>Welcome, <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></h1>
-     <a href="logout.php">Logout</a>    
-    
-        
+<!------ MAIN CONTENT-------->  
+    <a>Welcome, <?php echo $_SESSION['fname']; ?> <?php echo $_SESSION['lname']; ?></a>
+    <br>
+    <a><u>Account Information:</u></a>
+    <br>
+    <a><u>Order History</u></a>
+  
+<!------ FOOTER-------->         
 <?php
         include('include/footer.php');
-?>
-
-<?php
-}
-else{
-    header("Location: index.php");
-    exit();
-}
 ?>

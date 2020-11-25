@@ -11,7 +11,6 @@ body{
 .Navbar{
     display: flex;
     align-items:center;
-    padding: 20px;
 }
 
 nav{
@@ -52,10 +51,8 @@ p{
 .container{
     max-width:2000px;
     margin:auto;
-    padding-left:25px;
-    padding-right:25px;
-    padding-top: 20px;
-    
+    padding-left:15px;
+    padding-right:15px;
 }
 
 .row
@@ -112,6 +109,12 @@ p{
     color:black;
 }
 
+.header{
+    flex: 1;
+    text-align: right;
+    padding-top:10px;
+    padding-right:40px;
+}
 .header .row{
     margin-top: 70px;
 }
@@ -154,6 +157,9 @@ p{
     display:none;
 }
 
+.options{
+    
+}
 /*---------------- all products page --------------*/
 .row-2{
     justify-content:space-between;
@@ -199,38 +205,36 @@ select:focus{
     background: white;
 }
 
-
 .error{
     background: #F2DeDe;
     color: #A94442;
     padding: 10px;
     width: 95%;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
 
-/*----- media query for menu----*/
+
+/*----- Dynamic position for menu----*/
 @media only screen and (max-width: 800px){
     nav ul{
         position:absolute;
-        top:70px;
-        left:0;
-        width:100%;
+        top:100px;
+        right:0;
+        width:170px;
         overflow:hidden;
         transition: max-height 0.5;
+        background:white;
+        border-style: dashed;
     }
     
     nav ul li{
         display:block;
-        margin-right:50px;
         margin-top: 10px;
         margin-bottom:10px;
     }
     
-    
     .menu-icon{
         display:block;
         cursor:pointer;
-    }
-    
+    }  
 }

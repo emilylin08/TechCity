@@ -16,7 +16,7 @@ Displaying all products in database...
         <hr>
     </tr>
     <?php
-        include "db_conn.php";
+        include "include/db_conn.php";
         $sql = "SELECT * from inventory";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);

@@ -2,7 +2,7 @@
     //https://stackoverflow.com/questions/11292468/how-to-check-if-value-exists-in-a-mysql-database
     //https://www.youtube.com/watch?v=JDn6OAMnJwQ&ab_channel=CodingwithElias
     session_start();
-    include "db_conn.php";
+    include "include/db_conn.php";
     
     echo $_POST['uname'];
     echo $_POST['password'];

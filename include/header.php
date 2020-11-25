@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>TechCity</title>
-    <link rel=" stylesheet" href="style.css" /> <!--connect html file with css file--->
+    <link rel=" stylesheet" href="include/style.css" /> <!--connect html file with css file--->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet"> 
     

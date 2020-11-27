@@ -6,6 +6,7 @@
 
 body{ 
     font-family: 'Cairo', sans-serif;
+    margin-bottom: 200px;
 }
 
 
@@ -67,6 +68,8 @@ p{
     color:#fff;
     padding-left:10px;
 }
+
+
 .btn:hover{
     background: #ADD8E6;
     color:black;
@@ -78,8 +81,6 @@ p{
     display: inline-block;
     border: 1px solid #ADD8E6;
     margin-left: 5px;
-    width:40px;
-    height: 40px;
     text-align:center;
     line-height: 40px;
     
@@ -138,7 +139,7 @@ nav ul li{
     margin:10px;
 }
 .col-3 img{
-    padding: 50px 0;
+    padding: 30px 0;
     max-width:100%;
     max-height:100%;
     margin-left: 10px;
@@ -159,24 +160,43 @@ nav ul li{
     background-color: white;
 }
 
+/*-----GALLERY FORMATTING ----*/
+
+.gallery-container{
+    width: 100%;
+    height: 500px;
+
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: ;
+}
+
+.gallery-container a:hover{
+    opacity:0.8;    
+}
+
+.gallery-container a div {
+    width: 100%;
+    height: 235 px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /*---------------- all products page --------------*/
 .row-2{
     justify-content:space-between;
     margin: 10px auto 10px;
 }
-
 select
 {
     border: 1px solid #ADD8E6;
     padding: 5px;
 }
-
 select:focus{
     outline:none;
 }
-
-
 #frm{
     border:solid gray 1px;
     width: 20%;
@@ -184,7 +204,6 @@ select:focus{
     margin: 100px auto;
     background: white;
 }
-
 .error{
     background: #F2DeDe;
     color: #A94442;
@@ -217,4 +236,15 @@ select:focus{
         display:block;
         cursor:pointer;
     }  
+}
+
+.center{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    padding: 50px;
+    border-style: groove;
+    border-radius: 20px;
+    border-color: #ADD8E6;
 }

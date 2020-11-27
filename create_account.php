@@ -4,7 +4,7 @@
 <html>
 
 <!---------CREATE A NEW ACCOUNT----------->
-    <div class = "row">
+    <div class = "center">
         <form action="check.php" method="post">
          <a>
         <h1>Create an account</h1>
@@ -18,7 +18,7 @@
             <label>Password: </label>
               <input type="text" id="password" name="password" placeholder="Password">
               <br>
-            <input type="submit" class="btn" value="Register">
+            <input type="submit" class="page-btn" value="Register">
           </a>
         </form>
     </div>

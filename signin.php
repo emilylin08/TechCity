@@ -1,9 +1,10 @@
+<?php //possible idea to make it more interesting: https://www.youtube.com/watch?v=HV7DtH3J2PU&ab_channel=DarkCode ?>
 <!---------HEADER----------->
 <?php include('include/header.php');?>
 
 <html>
 
-<div class = "row">
+<div class = "center">
 <!---------SIGN IN WITH EXISTING ACCOUNT----------->
 
         <form action="login.php" method="post">
@@ -19,10 +20,10 @@
             <label>Password: </label>
               <input type="text" id="password" name="password" placeholder="Password">
               <br>
-            <input type="submit" class="btn" value="Login">
+            <input type="submit" class="page-btn" value="Login">
           </a>
         </form>
-    </div>
+</div>
 
 </html>  
 

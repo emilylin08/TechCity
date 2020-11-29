@@ -34,11 +34,13 @@ include('include/header.php');
             if($resultCheck >0)
             {
             while($row = mysqli_fetch_assoc($result)){
-                echo '<a href ="#">
+                //EDIT ECHO STATEMENT TO CONCACTENATE PRODUCT ID
+                echo '<a href ="product_info.php?productid= '.$row["ProductID"]. '">
                 <div><img src="'.$row['ProductImage'].'" width="350" height="200" /></div>
             
                 <h3>'.$row["ProductName"].'</h3>
                 <p>$ '.$row["Cost"].'</p>
+                <p>'.$row["ProductID"].'</p>
                 </a>';
             }
             }

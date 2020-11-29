@@ -2,7 +2,9 @@
 include('include/header.php');
 ?>
 
-<img src = "https://i.imgur.com/jexO9p2.jpg">
+<!-----PRODUCT DETAILS----------->
+
+
 
 <!------ FOOTER-------->  
 <?php

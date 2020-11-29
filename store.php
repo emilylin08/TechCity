@@ -4,11 +4,11 @@ include('include/header.php');
 ?>
 
 <!------ FEATURED CATEGORIES-------->
-        <div class="categories">
-            
-            <div class=".small-container">
-                <h1>Featured Products</h1>
-                <div class = "row">
+<!--- Display top 2 most sold products---->
+
+    <div class="categories">
+            <h1>Featured Products</h1>
+            <div class="gallery-container">
                     <div class="col-3">
                         <img src="images/WacomMobilePro16.jpg">
                         </div>
@@ -17,9 +17,10 @@ include('include/header.php');
                         </div>
                 </div>
             </div>
-        </div>
+    </div>
         
-        
+<!----- List specific order??------------>
+
 <!----- Store!!!!------------>
 <div class="categories">
     <h1>All Products</h1>

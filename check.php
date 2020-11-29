@@ -16,8 +16,12 @@
             return $data;
         }
         
+        //Stores data into temp variables
         $uname = validate($_POST['uname']);
         $pass = validate($_POST['password']);
+        $fname = validate($_POST['fname']);
+        $lname = validate($_POST['lname']);
+        $email = validate($_POST['email']);
         
         if(empty($uname)){
             header("Location: signin.php?error=User Name is required");
@@ -40,7 +44,7 @@
             	header("Location: create_account.php?error=Username Taken!");
                     exit();
             }else{
-                //idk what this is
+                //idk what this is for
                     header("Location: create_account.php?error=Incorrect Username or Password");
                     exit();
                 }
@@ -49,11 +53,9 @@
             else{
              //USERNAME DOES NOT EXIST Account created
              header("Location: create_account.php?error=Account Created");
-             $_SESSION['username'] = $uname;
-             $_SESSION['username'] = $pass;
                 
-             //blahblah figure out how to point to end of table
-             $sql = "INSERT INTO customer (user_name, password) VALUES ('$uname', '$pass')"; 
+             //inserts data into SQL database
+             $sql = "INSERT INTO customer (user_name, password,first_name, last_name, EmailAddress) VALUES ('$uname', '$pass', '$fname','$lname','$email')"; 
              if ($conn->query($sql) === TRUE) {
                   echo "New record created successfully";
                 } else {

@@ -27,7 +27,9 @@ p{
     color:#808080;
 }
 
-
+label{
+    color:#00008B;
+}
 .container{
     max-width:2000px;
     margin:auto;
@@ -212,7 +214,15 @@ select:focus{
     border-radius: 5px; 
 }
 
+.logincontainer {
+  width: 300px;
+  clear: both;
+}
 
+.logincontainer input {
+  width: 100%;
+  clear: both;
+}
 /*----- Dynamic position for menu----*/
 @media only screen and (max-width: 800px){
     nav ul{

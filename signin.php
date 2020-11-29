@@ -5,6 +5,7 @@
 <html>
 
 <div class = "center">
+<div class = "logincontainer">
 <!---------SIGN IN WITH EXISTING ACCOUNT----------->
 
         <form action="login.php" method="post">
@@ -24,7 +25,7 @@
           </a>
         </form>
 </div>
-
+</div>
 </html>  
 
 <!---------FOOTER----------->

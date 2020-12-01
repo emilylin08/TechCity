@@ -2,7 +2,10 @@
 include('include/header.php');
 ?>
 
+
 <!-----PRODUCT DETAILS----------->
+<link href="style.css" type="text/css" rel="stylesheet" />
+
 <?php
 include "include/db_conn.php";
 
@@ -16,13 +19,20 @@ if(mysqli_num_rows($result)===1){
 ?>
 
 
-<h1 class="name"><?=$product['ProductName']?></h1>
-        &dollar;<?=$product['Cost']?>
-<div><img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div><div>
+<div align ='left'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
 
-</div>
+
+<div class="product-headings"><?=$product['ProductName']?>
+        <br/> &dollar;<?=$product['Cost']?> </div>
+
+<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+
+<br/> <div class="product-description"><?=$product['ProductDescription']?></div>
+
+<button class="back-button-productpage" onclick="history.go(-1);" >Previous Page </button>
 
 <!------ FOOTER-------->  
 <?php
         include('include/footer.php');
+
 ?>

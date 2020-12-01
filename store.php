@@ -20,10 +20,35 @@ include('include/header.php');
     </div>
         
 <!----- List specific order??------------>
+<div class="categories">
+<h1>All Products</h1>
+<nav class="product-filter">
 
+  <div class="sort">
+
+    <div class="collection-sort">
+      <label>Filter by:</label>
+      <select>
+        <option value="/">Laptops</option>
+        <option value="/">Desktops</option>
+        <option value="/">Misc</option>
+      </select>
+    </div>
+
+    <div class="collection-sort">
+      <label>Sort by:</label>
+      <select>
+        <option value="/">Popularity</option>
+        <option value="/">Price</option>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+</nav>
 <!----- Store!!!!------------>
 <div class="categories">
-    <h1>All Products</h1>
             
     <section class = "gallery-container">
        <?php
@@ -39,7 +64,6 @@ include('include/header.php');
             
                 <h3>'.$row["ProductName"].'</h3>
                 <p>$ '.$row["Cost"].'</p>
-
                 </a>';
             }
             }

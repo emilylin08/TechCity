@@ -1,53 +1,38 @@
 <?php
-//https://www.youtube.com/watch?v=0e02dl66PYo&ab_channel=DaniKrossing
-//https://www.youtube.com/watch?v=H6GI0IV_bEU&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=65&ab_channel=DaniKrossing
-
-//<img src=" '.$row['ProductImage'].' ">
-//<img src="'.$row['ProductImage'].'" width="350" height="200" />
 include('include/header.php');
+include "include/db_conn.php";
 ?>
+
 
 <?php
-// Check to make sure the id parameter is specified in the URL
-if (isset($_GET['productid'])) {
-    // Prepare statement and execute, prevents SQL injection
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    // Fetch the product from the database and return the result as an Array
-    $product = $stmt->fetch(PDO::FETCH_ASSOC);
-    // Check if the product exists (array is not empty)
-    if (!$product) {
-        // Simple error to display if the id for the product doesn't exists (array is empty)
-        exit('Product does not exist!');
-    }
-} else {
-    // Simple error to display if the id wasn't specified
-    exit('Product does not exist!');
-}
+//Grabs product ID and quantity from previous page
+$productID = $_POST["product_id"];
+$quantity = $_POST["quantity"];
+echo "Product ID:" ,$productID, "<br>";
+echo "Quantity:", $quantity;
 ?>
-  
-  
-<div class="product content-wrapper">
-    <img src="imgs/<?=$product['img']?>" width="500" height="500" alt="<?=$product['name']?>">
-    <div>
-        <h1 class="name"><?=$product['name']?></h1>
-        <span class="price">
-            &dollar;<?=$product['price']?>
-            <?php if ($product['rrp'] > 0): ?>
-            <span class="rrp">&dollar;<?=$product['rrp']?></span>
-            <?php endif; ?>
-        </span>
-        <form action="index.php?page=cart" method="post">
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="<?=$product['id']?>">
-            <input type="submit" value="Add To Cart">
-        </form>
-        <div class="description">
-            <?=$product['desc']?>
-        </div>
-    </div>
-</div>
 
+<div id="shopping-cart">
+    <h1>Shopping Cart</h1>
+
+<a id="btnEmpty" href="index.php?action=empty">Empty Cart</a>
+
+	
+<table class="tbl-cart" cellpadding="10" cellspacing="1">
+<tbody>
+<tr>
+<th style="text-align:left;">Name</th>
+<th style="text-align:left;">Code</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+<th style="text-align:center;" width="5%">Remove</th>
+</tr>	
+
+
+</tbody>
+</table>
+</div>
 <!------ FOOTER-------->  
 <?php
         include('include/footer.php');

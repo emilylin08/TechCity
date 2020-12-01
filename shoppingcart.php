@@ -3,6 +3,8 @@ include('include/header.php');
 ?>
 
 <!------- SHOPPING CART INFORMATION ----------->
+        
+        
          <div class="categories">
             
         <div class=".small-container">

@@ -3,12 +3,10 @@
     padding: 0;
     box-sizing:border-box;
 }
-
 body{ 
     font-family: 'Cairo', sans-serif;
     margin-bottom: 200px;
 }
-
 
 /*----- TEXT FORMATTING----*/
 a{
@@ -16,7 +14,6 @@ a{
     text-align:left;
     color: #808080;
 }
-
 h1{
     font-family: 'Cairo', sans-serif;
     text-decoration: underline #ADD8E6;
@@ -26,6 +23,7 @@ h1{
 p{
     color:#808080;
 }
+
 
 label{
     color:#00008B;
@@ -70,8 +68,6 @@ label{
     color:#fff;
     padding-left:10px;
 }
-
-
 .btn:hover{
     background: #ADD8E6;
     color:black;
@@ -94,7 +90,6 @@ label{
 
 
 /*-----HEADER FORMATTING ----*/
-
 .header{
     flex: 1;
     text-align: right;
@@ -163,7 +158,6 @@ nav ul li{
 }
 
 /*-----GALLERY FORMATTING ----*/
-
 .gallery-container{
     width: 100%;
     height: 500px;
@@ -173,11 +167,9 @@ nav ul li{
     justify-content: space-around;
     align-items: ;
 }
-
 .gallery-container a:hover{
     opacity:0.8;    
 }
-
 .gallery-container a div {
     width: 100%;
     height: 235 px;
@@ -191,8 +183,7 @@ nav ul li{
     justify-content:space-between;
     margin: 10px auto 10px;
 }
-select
-{
+select{
     border: 1px solid #ADD8E6;
     padding: 5px;
 }
@@ -213,16 +204,40 @@ select:focus{
     width: 95%;
     border-radius: 5px; 
 }
+.product-filter {
+  display: flex;
+}
+.sort {
+  display: flex;
+}
+.collection-sort {
+  display: flex;
+}
+.product-filter h1 {
+  flex-grow: 1;
+}
+
+
+
 
 .logincontainer {
   width: 300px;
   clear: both;
 }
-
 .logincontainer input {
   width: 100%;
   clear: both;
 }
+
+
+/*---------------- Shopping Cart --------------*/
+.tbl-cart {
+	font-size: 0.9em;
+}
+.tbl-cart th {
+	font-weight: normal;
+}
+
 /*----- Dynamic position for menu----*/
 @media only screen and (max-width: 800px){
     nav ul{

@@ -27,7 +27,7 @@
 }
 
 .product-description {
-    border-radius: 3px;
+    border-radius: 0x;
     margin-top: 10px;
     font-size: 18px;
     border: 0px solid #D6D0D0;
@@ -36,8 +36,8 @@
     position: relative;
     left: -5px;
     top: 21px;
-    height: 52px;
-    width: 350px;
+    height: inherit;
+    width: 600px
 }
 
 .product-headings {

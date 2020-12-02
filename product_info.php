@@ -24,7 +24,7 @@ if(mysqli_num_rows($result)===1){
 <div class="product-headings"><?=$product['ProductName']?>
         <br/> &dollar;<?=$product['Cost']?> </div>
 
-<form action="test-zone.php?page=cart" method="post">
+<form action="shoppingcart.php?action=add" method="post">
             <label>Quantity</label>
             <input type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
             <input type="hidden" name="product_id" value="<?=$product['ProductID']?>">

@@ -9,9 +9,6 @@
     //https://www.youtube.com/watch?v=JDn6OAMnJwQ&ab_channel=CodingwithElias
     session_start();
     include "include/db_conn.php";
-    
-    echo $_POST['uname'];
-    echo $_POST['password'];
 
     if(isset($_POST['uname']) && isset($_POST['password'])){
         function validate($data)

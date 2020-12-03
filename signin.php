@@ -1,3 +1,5 @@
+<!--THIS PAGE GETS USER INPUTTED VALUES FOR SIGN IN PAGE----------->
+    
 <?php //possible idea to make it more interesting: https://www.youtube.com/watch?v=HV7DtH3J2PU&ab_channel=DarkCode ?>
 <!---------HEADER----------->
 <?php include('include/header.php');?>

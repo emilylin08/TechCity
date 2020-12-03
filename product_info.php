@@ -1,3 +1,7 @@
+<!--THIS PAGE WILL COME AFTER clicking on respective image in STORE.PHP
+    Allows user to select quantity and add to shopping cart
+    Redirects to Shoppingcart.php
+    ----------->
 <?php
 include('include/header.php');
 ?>

@@ -1,4 +1,9 @@
-<?php
+<!--THIS PAGE CHECKS VALUES INPUTED IN SIGNIN.PHP
+   IF USER EXISTS, Session initialized with user information taken from database
+   IF username/password is incorrect, bounced back to SIGNIN.PHP
+   ----------->
+    
+   <?php
     //https://stackoverflow.com/questions/11292468/how-to-check-if-value-exists-in-a-mysql-database
     //https://www.youtube.com/watch?v=JDn6OAMnJwQ&ab_channel=CodingwithElias
     session_start();

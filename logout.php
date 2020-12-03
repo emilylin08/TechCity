@@ -1,3 +1,8 @@
+<!--THIS PAGE WILL SIGN USERS OUT
+    REMOVES VALUES CACHED IN SESSION
+----------->
+
+
 <?php 
 session_start();
 

@@ -1,3 +1,8 @@
+<!--THIS PAGE OCCURS WHEN "SIGN IN" IS SELECTED ON HEADER
+    TAKES USER INPUTED VALUES AND PUSHES IT TO CHECK.PHP
+    ----------->
+
+
 <!---------HEADER----------->
 <?php include('include/header.php');?>
 

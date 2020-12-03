@@ -1,3 +1,11 @@
+<!--MY ACCOUNT PAGE
+    THIS PAGE will only show up if user is signed in
+    This Page will output users information
+    Order history
+    Allow users to cancel order
+----------->
+
+
 <!---------HEADER----------->
 <?php include('include/header.php');?>
 

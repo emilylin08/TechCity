@@ -1,3 +1,8 @@
+<!--THIS PAGE shows up when STORE is selected in header
+    Outputs all products available in INVENTORY table in database
+----------->
+
+
 <?php
 //https://www.youtube.com/watch?v=0e02dl66PYo&ab_channel=DaniKrossing
 include('include/header.php');

@@ -1,4 +1,10 @@
-<?php
+<!--THIS PAGE WILL COME AFTER CREATE_ACCOUNT.PHP
+    Checks if username is taken in database
+    If it is not, creates a new entry and updates database
+    ----------->
+   
+
+   <?php
     //https://stackoverflow.com/questions/11292468/how-to-check-if-value-exists-in-a-mysql-database
     //https://www.youtube.com/watch?v=JDn6OAMnJwQ&ab_channel=CodingwithElias
     session_start();

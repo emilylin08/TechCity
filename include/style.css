@@ -60,13 +60,14 @@ label{
 /*----- BUTTON FORMATTING----*/
 
 .btn{
-    font-size: 30px;
-    display:inline-block;
-    max-width:100%;
-    max-height:100%;
-    BACKGROUND: #00008B;
-    color:#fff;
-    padding-left:10px;
+    background-color: #ffffff;
+	border: #ADD8E6 1px solid;
+	padding: 5px 10px;
+	color: #00008B;
+	float: right;
+	text-decoration: none;
+	border-radius: 3px;
+	margin: 10px 0px;
 }
 .btn:hover{
     background: #ADD8E6;

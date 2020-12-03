@@ -24,9 +24,8 @@ if(mysqli_num_rows($result)===1){
 
 <div align ='left'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
 
-
-<div class="product-headings"><?=$product['ProductName']?>
-        <br/> &dollar;<?=$product['Cost']?> </div>
+<h1><?php echo $product['ProductName']?></h1>
+<p><?php echo $product['Cost']?></p>
 
 <form action="shoppingcart.php?action=add" method="post">
             <label>Quantity</label>

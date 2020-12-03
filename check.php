@@ -58,7 +58,7 @@
              header("Location: create_account.php?error=Account Created");
                 
              //inserts data into SQL database
-             $sql = "INSERT INTO customer (user_name, password,first_name, last_name, EmailAddress) VALUES ('$uname', '$pass', '$fname','$lname','$email')"; 
+             $sql = "INSERT INTO customer (user_name, password,first_name, last_name, email_address) VALUES ('$uname', '$pass', '$fname','$lname','$email')"; 
              if ($conn->query($sql) === TRUE) {
                   echo "New record created successfully";
                 } else {

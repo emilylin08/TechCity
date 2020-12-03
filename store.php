@@ -2,7 +2,6 @@
     Outputs all products available in INVENTORY table in database
 ----------->
 
-
 <?php
 //https://www.youtube.com/watch?v=0e02dl66PYo&ab_channel=DaniKrossing
 include('include/header.php');
@@ -10,7 +9,7 @@ include('include/header.php');
 
 <!------ FEATURED CATEGORIES-------->
 <!--- Display top 2 most sold products---->
-
+<!---
     <div class="categories">
             <h1>Featured Products</h1>
             <div class="gallery-container">
@@ -23,36 +22,10 @@ include('include/header.php');
                 </div>
             </div>
     </div>
-        
-<!----- List specific order??------------>
-<div class="categories">
-<h1>All Products</h1>
-<nav class="product-filter">
+--->
 
-  <div class="sort">
-
-    <div class="collection-sort">
-      <label>Filter by:</label>
-      <select>
-        <option value="/">Laptops</option>
-        <option value="/">Desktops</option>
-        <option value="/">Misc</option>
-      </select>
-    </div>
-
-    <div class="collection-sort">
-      <label>Sort by:</label>
-      <select>
-        <option value="/">Popularity</option>
-        <option value="/">Price</option>
-      </select>
-    </div>
-
-  </div>
-</div>
-
-</nav>
 <!----- Store!!!!------------>
+<h1>All Products</h1>
 <div class="categories">
             
     <section class = "gallery-container">
@@ -77,7 +50,6 @@ include('include/header.php');
     </section>       
             
 </div>
-
 <!------ FOOTER-------->  
 <?php
         include('include/footer.php');

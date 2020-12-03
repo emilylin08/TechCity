@@ -5,7 +5,9 @@
 }
 body{ 
     font-family: 'Cairo', sans-serif;
-    margin-bottom: 200px;
+    min-height: 200px;
+    margin-bottom: 500px;
+    clear: both;
 }
 
 /*----- TEXT FORMATTING----*/
@@ -178,46 +180,6 @@ nav ul li{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-/*---------------- all products page --------------*/
-.row-2{
-    justify-content:space-between;
-    margin: 10px auto 10px;
-}
-select{
-    border: 1px solid #ADD8E6;
-    padding: 5px;
-}
-select:focus{
-    outline:none;
-}
-#frm{
-    border:solid gray 1px;
-    width: 20%;
-    border-radius: 5px;
-    margin: 100px auto;
-    background: white;
-}
-.error{
-    background: #F2DeDe;
-    color: #A94442;
-    padding: 10px;
-    width: 95%;
-    border-radius: 5px; 
-}
-.product-filter {
-  display: flex;
-}
-.sort {
-  display: flex;
-}
-.collection-sort {
-  display: flex;
-}
-.product-filter h1 {
-  flex-grow: 1;
-}
-
 
 
 

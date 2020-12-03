@@ -30,10 +30,10 @@
         $email = validate($_POST['email']);
         
         if(empty($uname)){
-            header("Location: signin.php?error=User Name is required");
+            header("Location: create_account.php?error=User Name is required");
             exit();
         }else if(empty($pass)){
-            header("Location: signin.php?error=Password is required");
+            header("Location: create_account.php?error=Password is required");
             exit();
         }else{
             

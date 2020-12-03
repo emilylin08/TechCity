@@ -30,7 +30,6 @@ if(!empty($_GET["action"])){
             //stores value of most recent added item to temp array
             $itemArray = array('ProductName'=>$product["ProductName"],'quantity' =>$_POST["quantity"], 'Cost'=>$product["Cost"], 'image'=>$product["ProductImage"], 'ProductID' =>$product["ProductID"]);
             
-            $productID = $product["ProductID"];
             $_SESSION["cart_item"] = $itemArray;
             $_SESSION["total"] = $product['Cost'] * $quantity;
             break;
@@ -50,6 +49,7 @@ if(!empty($_GET["action"])){
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
     $total_price = 0;
+    $item = $_SESSION["cart_item"];
 ?>	
 	
 <table class="tbl-cart" cellpadding="10" cellspacing="1">
@@ -61,9 +61,9 @@ if(isset($_SESSION["cart_item"])){
 <th style="text-align:right;" width="10%">Price</th>
 </tr>	
 				<tr>
-				<td><img src="<?php echo $product['ProductImage']?>" class="cart-item-image" /><?php echo $product["ProductName"]; ?></td>
-				<td style="text-align:right;"><?php echo $quantity; ?></td>
-				<td  style="text-align:right;"><?php echo "$ ".$product["Cost"]; ?></td>
+				<td><img src="<?php echo $item["image"]?>" class="cart-item-image" /><?php echo $item["ProductName"]; ?></td>
+				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+				<td  style="text-align:right;"><?php echo "$ ".$item["Cost"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ". number_format($_SESSION["total"],2); ?></td>
 				</tr>
 

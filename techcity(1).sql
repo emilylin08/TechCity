@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2020 at 05:31 AM
+-- Generation Time: Dec 04, 2020 at 11:39 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -47,12 +47,11 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`customer_ID`, `user_name`, `password`, `first_name`, `last_name`, `email_address`, `Phone`, `Address`, `City`, `State`, `postal_code`) VALUES
 (1, 'username1', 'password1', 'Emily', 'Lin', 'emilylin08@gmail.com', '6265353361', 'address1', 'arcadia', 'california', '91007'),
-(3, 'username2', 'password2', 'Diana', 'Hernandez', 'dianahernandez@gmail.com', '6262232323', 'address2', 'pomona', 'california', '91767'),
-(4, 'username3', 'password3', 'Aleena', 'Salas', 'aleenasalas@gmail.com', '7144444444', 'address3', 'west covina', 'california', '91790'),
-(5, 'username4', 'password4', 'Tin', 'Nguyen', 'tinnguyen@gmail.com', '7142222222', 'address4', 'alhambra', 'california', '91804'),
-(6, 'username5', 'password5', 'Nico', 'Velasco', 'nicovelasco@gmail.com', '6264444444', 'address5', 'fullerton', 'california', '92831'),
-(7, 'username6', 'password6', 'Claudio', 'Salazar', 'claudiosalazar@gmail.com', '3145555555', 'address5', 'fullerton', 'california', '92831'),
-(12, 'emilylin08', '17801', 'Emily', 'Lin', 'emilylin08@gmail.com', '', '', '', '', '');
+(2, 'username2', 'password2', 'Diana', 'Hernandez', 'dianahernandez@gmail.com', '6262232323', 'address2', 'pomona', 'california', '91767'),
+(3, 'username3', 'password3', 'Aleena', 'Salas', 'aleenasalas@gmail.com', '7144444444', 'address3', 'west covina', 'california', '91790'),
+(4, 'username4', 'password4', 'Tin', 'Nguyen', 'tinnguyen@gmail.com', '7142222222', 'address4', 'alhambra', 'california', '91804'),
+(5, 'username5', 'password5', 'Nico', 'Velasco', 'nicovelasco@gmail.com', '6264444444', 'address5', 'fullerton', 'california', '92831'),
+(6, 'username6', 'password6', 'Claudio', 'Salazar', 'claudiosalazar@gmail.com', '3145555555', 'address5', 'fullerton', 'california', '92831');
 
 -- --------------------------------------------------------
 
@@ -107,7 +106,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `customer_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `inventory`

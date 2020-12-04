@@ -86,11 +86,14 @@ if(isset($_SESSION["cart_item"])){
 <!------- BUTTONS ----------->
      
         <div class=".small-container">  
+           <?php if(isset($_SESSION["cart_item"]))
+            {  //ONLY DISPLAY CHECKOUT BUTTON IF THERE ARE ITEMS IN SHOPPING CART
+                ?>
             <div class = "row row-2">
             <a></a>
             <a style = "margin-left:40px" href="payment_con.php" class="btn"> Checkout &#10148;</a>
             </div>
-            
+            <?php } ?>
             <div class = "row row-2">
             <a></a>
             <a style = "margin-left:40px" href="store.php" class="btn"> Keep Shopping &#10148;</a>

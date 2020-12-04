@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet"> 
     
+    <link href="include/style.css" type="text/css" rel="stylesheet" />
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Product Reviews</title>
+    <link rel="stylesheet" href="include/reviewstyle.css">
+    <link rel="stylesheet" href="/your-path-to-fontawesome/css/fontawesome.css">
+    
 </head>
 
 

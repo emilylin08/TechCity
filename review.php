@@ -1,18 +1,23 @@
 <?php
+//https://www.youtube.com/watch?v=0e02dl66PYo&ab_channel=DaniKrossing
+include('include/header.php');
+?>
+  
+   <?php
     $mytime = getdate(date("U"));
-    $date = "$mytime[weekday], $mytime[month] $mytime[myday], $mytime[year]";
+    $date = "$mytime[month] $mytime[mday], $mytime[year]";
 
-    require "db_conn.php";
+    require "include/db_conn.php";
         
+//calculates number of reviews
         $sql = $conn->query("SELECT customer_ID FROM reviews");
         $numR = $sql->num_rows;
 
-        $sql = $conn->query("SELECT SUM(ReviewID) AS total FROM reviews");
+//calculates total sum of all reviews to calculate average review
+        $sql = $conn->query("SELECT SUM(ReviewRating) AS total FROM reviews");
         $data = $sql->fetch_array();
         $total = $data["total"];
-
         $avg = "";
-
         if($numR !=0){
             if(is_nan(round(($total / $numR), 1))){
                 $avg = 0;
@@ -24,23 +29,13 @@
             else{
                 $avg = 0;
             }
-
 ?>
-<?php ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Product Reviews</title>
-    <link rel="stylesheet" href="reviewstyle.css">
-    <link rel="stylesheet" href="/your-path-to-fontawesome/css/fontawesome.css">
-    <script src = "http://code.jquery.com/jquery-3.2.1.min.js" integrity= "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin= "anonymous"></script>
-    </head>
-    
-    <body>
-    <div class="containter">
+<!------REVIEW STARS------------->
+    <div class="container">
         <div class= "rating-review">
         <div class = "tri table-flex">
             <table>
@@ -61,12 +56,32 @@
                         </div>
                     </div>
                     <div class="rnrn">
-                    <p class="rars"><?php if($numR == 0){echo "NO";}else(echo $numR;) ?> Reviews</p>
+                    <p class="rars"><?php if($numR == 0){echo "NO";}else{echo $numR;} ?> Reviews</p>
                     </div>
                     </td>
                 <td>
+<!------REVIEW BREAKDOWN------------->
                     <div class="rpb">
-                    <div class="rnpb">
+                    <?php
+                    foreach(array_reverse(range(1,5), TRUE) as $key => $value)
+                    {
+                    //calculates number of reviews per rating
+                    $sql = $conn->query("SELECT Count(*) AS number FROM reviews WHERE ReviewRating = $value");
+                    $data = $sql->fetch_array();
+                    $numReview = $data["number"];
+                        ?>
+                        <div class="rnpb">
+                     <label><?=$value?><i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 20%"></div>
+                        </div>
+                        <div class="label">(<?=$numReview;?>)</$value?></div>
+                        </div>
+                            <?php
+                    }
+                        ?>
+                        <!-----
+                        <div class="rnpb">
                      <label>5<i class="fa fa-star"></i></label> 
                         <div class="ropb">
                             <div class="ripb" style="width: 20%"></div>
@@ -101,9 +116,12 @@
                         </div>
                         <div class="label">(13)</div>
                         </div>
+                        
+                        --->
                     </div>
                     </td>
                 <td>
+<!------BUTTON TO SUBMIT REVIEW------------->
                     <div class="rrb">
                     <p>Please Review Our Product</p>
                         <button class="rbtn opmd"> Add Review</button>
@@ -140,49 +158,62 @@
                 </div>
                 </div>
             </div>
-            <div class="bri">
-            <div class="uscm">
-                <?php 
-                    $sqlp = "SELECT * FROM reviews";
-                    $result = $conn->query($sqlp);
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = $result->fetch_assoc()){
-                            
-                        }
-                    }
+            
+<!------DISPLAY EXISTING REVIEWS------------->
+        <?php
+            $sqlreview = "SELECT * from reviews";
+            $result = mysqli_query($conn, $sqlreview);
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck >0)
+            {
+            while($row = mysqli_fetch_assoc($result)){
+                //links customerID in REVIEWS table to CUSTOMER table and pulls first and last name
+                $custID = $row['Customer_ID'];
+                
+                $findinfo = mysqli_query($conn, "SELECT * FROM Customer WHERE customer_ID = $custID");
+                $resultrow = mysqli_fetch_assoc($findinfo);
+                $fname = $resultrow['first_name'];
+                $lname = $resultrow['last_name'];
+
                 ?>
                 <div class="uscm-secs">
-                <div class="us-ing">
-                    <p><?= substr($row['ReviewID'],0,1) ;?></p>
-                    </div>
-                    <div class="uscms">
-                    <div class="us-rate">
-                        <div class="pdt-rate">
-                    <div class="pro-rating">
-                        <div class="clearfix rating marts">
-                            <div class="rating-stars">
-                            <div class= "grey-stars"></div>
-                            <div class="filled-stars" style="width:<?= $row['ReviewRating']*20; ?>%"></div>
-                            </div></div>
-                        </div>
-                    </div>
-                        </div>
-                        <div class="us-cmt">
-                        <p><?= $row['ReviewContent']; ?></p>
-                        </div>
-                        <div class="us-nm">
-                        <p><i>By <span class= "cmnm"><?= $row['ReviewID']; ?></span> on <span class="cmdt"><?= $row['ReviewDate']; ?></span></i></p>
-                        </div>
-                    </div>
-                </div>
-                <?php  }
-                    }
-                ?>
+        <div class="us-ing">
+            <p><?= substr($row['ReviewID'],0,1) ;?></p>
+            </div>
+            <div class="uscms">
+            <div class="us-rate">
+                <div class="pdt-rate">
+            <div class="pro-rating">
+                <div class="clearfix rating marts">
+                    <div class="rating-stars">
+                    <div class= "grey-stars"></div>
+                    <div class="filled-stars" style="width:<?= $row['ReviewRating']*20; ?>%"></div>
+                    </div></div>
                 </div>
             </div>
+                    </div>
+                    <div class="us-cmt">
+                    <br>
+                    <p><?= $row['ReviewContent']; ?></p>
+                    </div>
+                    <div class="reviewinfo">
+                    <p>By <?= $fname, " " , $lname, " " ?><?= $row['ReviewDate']; ?></p>
+                    </div>
+                    </div>
+                </div>
+                            <?php 
+                        }
+                        }
+                    ?>
+
             </div>
         </div>
         </div>
         <script src="main.js"></script>
     </body>
     <html></html>
+    
+   <!------ FOOTER-------->  
+<?php
+        include('include/footer.php');
+?>

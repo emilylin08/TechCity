@@ -45,13 +45,13 @@
                 
             }else{
                 echo "inncorect data";
-                    header("Location: signin.php?error=Incorrect Username <br>or Password");
+                    header("Location: signin.php?error=Incorrect Username or Password");
                     exit();
                 }
                 
             }
             else{
-             header("Location: signin.php?error=Incorrect Username <br>or Password");
+             header("Location: signin.php?error=Incorrect Username or Password");
              exit();
           }
             }

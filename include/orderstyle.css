@@ -1,0 +1,36 @@
+body{
+    
+}
+
+.ordercontainer{
+    padding-left: 50px;
+    background-color: black;
+}
+
+.Orderbox {
+  border: 1px solid black;
+    align-content: center;
+} 
+
+.tbl-cart {
+	font-size: 0.9em;
+    max-width: 900px;
+    border: 1px solid black;
+}
+
+.tbl-cart th{
+    background-color:darkgray;
+    border: 1px solid black;
+}
+
+.tbl-cart td{
+    background-color:#DCDCDC;
+    border: 1px solid black;
+}
+.OrderHistory{
+    float:right;
+}
+
+.AccountInfo{
+    float:left;
+}

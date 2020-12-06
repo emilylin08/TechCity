@@ -24,10 +24,10 @@ if(mysqli_num_rows($result)===1){
 
 
 <!-------------- PRODUCT DETAILS ------------------->
-<div align ='left'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
+<div align ='right'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
 
 <h1><?php echo $product['ProductName']?></h1>
-<p><?php echo $product['Cost']?></p>
+<p><?php echo "$", $product['Cost']?></p>
 
 <form action="shoppingcart.php?action=add" method="post">
             <label>Quantity</label>
@@ -35,7 +35,26 @@ if(mysqli_num_rows($result)===1){
             <input type="hidden" name="product_id" value="<?=$product['ProductID']?>">
             <input type="submit" value="Add to Cart" class="btnAddAction" />
         </form>
-        <div class="product-description"><?=$product['ProductDescription']?></div>
+        
+        <table class="tbl-cart" cellpadding="10" cellspacing="1">
+            <tr>
+                <th style="text-align:left;" width="50%">Brand Name:</th>
+                <th style="text-align:left;" width="50%">Model:</th>
+            </tr>
+            <tr>
+                <th>Ram Specifications:</th>
+                <th>Ram</th>
+            </tr>
+            <tr>
+                <th>Display Specs:</th>
+                <th>Ram</th>    
+            </tr>
+            <tr>
+                <th>dfr</th>
+            </tr>
+            
+        </table>
+        <?=$product['ProductDescription']?>
 
 
 
@@ -224,7 +243,6 @@ if(mysqli_num_rows($result)===1){
         </div>
         </div>
         
-<button class="back-button-productpage" onclick="history.go(-1);" >Previous Page </button>
 
 <!------ FOOTER-------->  
 <?php

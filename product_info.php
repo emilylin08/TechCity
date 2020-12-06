@@ -24,7 +24,7 @@ if(mysqli_num_rows($result)===1){
 
 
 <!-------------- PRODUCT DETAILS ------------------->
-<div align ='right'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
+<div align ='left'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
 
 <h1><?php echo $product['ProductName']?></h1>
 <p><?php echo "$", $product['Cost']?></p>
@@ -36,25 +36,32 @@ if(mysqli_num_rows($result)===1){
             <input type="submit" value="Add to Cart" class="btnAddAction" />
         </form>
         
-        <table class="tbl-cart" cellpadding="10" cellspacing="1">
+        <table class="item-table" cellpadding="10" cellspacing="1">
             <tr>
-                <th style="text-align:left;" width="50%">Brand Name:</th>
                 <th style="text-align:left;" width="50%">Model:</th>
+                <th style="text-align:left;" width="50%"><?=$product['ProductDescription']?></th>
             </tr>
             <tr>
-                <th>Ram Specifications:</th>
-                <th>Ram</th>
+                <th style="text-align:left;" width="50%">Storage:</th>
+                <th style="text-align:left;" width="50%"><?=$product['Storage']?></th>
             </tr>
             <tr>
-                <th>Display Specs:</th>
-                <th>Ram</th>    
+                <th style="text-align:left;" width="50%">CPU:</th>
+                <th style="text-align:left;" width="50%"><?=$product['CPU']?></th> 
             </tr>
             <tr>
-                <th>dfr</th>
+                <th style="text-align:left;" width="50%">Display:</th>
+                <th style="text-align:left;" width="50%"><?=$product['DisplaySpec']?></th> 
             </tr>
-            
+            <tr>
+                <th style="text-align:left;" width="50%">Ram:</th>
+                <th style="text-align:left;" width="50%"><?=$product['RamSpec']?></th> 
+            </tr>
+            <tr>
+                <th style="text-align:left;" width="50%">Operating System:</th>
+                <th style="text-align:left;" width="50%"><?=$product['OSSpec']?></th> 
+            </tr>
         </table>
-        <?=$product['ProductDescription']?>
 
 
 

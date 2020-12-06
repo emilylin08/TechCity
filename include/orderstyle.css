@@ -23,10 +23,6 @@ body{
     border: 1px solid black;
 }
 
-.tbl-cart td{
-    background-color:#DCDCDC;
-    border: 1px solid black;
-}
 .OrderHistory{
     float:right;
 }

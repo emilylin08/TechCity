@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 04, 2020 at 11:41 AM
+-- Generation Time: Dec 06, 2020 at 12:00 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -46,7 +46,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_ID`, `user_name`, `password`, `first_name`, `last_name`, `email_address`, `Phone`, `Address`, `City`, `State`, `postal_code`) VALUES
-(1, 'username1', 'password1', 'Emily', 'Lin', 'emilylin08@gmail.com', '6265353361', 'address1', 'arcadia', 'california', '91007'),
+(1, 'elin2020', 'password1', 'Emily', 'Lin', 'emilylin08@gmail.com', '6265353361', 'address1', 'arcadia', 'california', '91007'),
 (2, 'username2', 'password2', 'Diana', 'Hernandez', 'dianahernandez@gmail.com', '6262232323', 'address2', 'pomona', 'california', '91767'),
 (3, 'username3', 'password3', 'Aleena', 'Salas', 'aleenasalas@gmail.com', '7144444444', 'address3', 'west covina', 'california', '91790'),
 (4, 'username4', 'password4', 'Tin', 'Nguyen', 'tinnguyen@gmail.com', '7142222222', 'address4', 'alhambra', 'california', '91804'),
@@ -64,6 +64,11 @@ CREATE TABLE `inventory` (
   `ProductName` varchar(50) NOT NULL,
   `ProductType` varchar(20) NOT NULL,
   `ProductDescription` varchar(300) NOT NULL,
+  `Storage` varchar(50) NOT NULL,
+  `CPU` varchar(50) NOT NULL,
+  `DisplaySpec` varchar(50) NOT NULL,
+  `RamSpec` varchar(50) NOT NULL,
+  `OSSpec` varchar(50) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Cost` decimal(10,2) NOT NULL,
   `ProductImage` varchar(100) NOT NULL,
@@ -74,13 +79,13 @@ CREATE TABLE `inventory` (
 -- Dumping data for table `inventory`
 --
 
-INSERT INTO `inventory` (`ProductID`, `ProductName`, `ProductType`, `ProductDescription`, `Quantity`, `Cost`, `ProductImage`, `Quantity_Sold`) VALUES
-(1, 'Macbook Pro 16', 'Laptop', 'Macbook Pro specifications', 5, '2149.00', 'https://i.imgur.com/Eyi7qbk.jpg', 5),
-(2, 'Surface Pro 7', 'Tablet', 'Surfacepro specifications', 10, '1318.63', 'https://i.imgur.com/E95DNBd.jpg', 4),
-(3, 'Wacom Mobile Pro 16', 'Tablet', 'Wacom mobile specifications', 10, '3392.00', 'https://i.imgur.com/o8CqxI0.jpg', 3),
-(4, 'Acer Aspire 5', 'Laptop', 'Acer Aspire 5 Slim specifications', 5, '364.99', 'https://i.imgur.com/jexO9p2.jpg', 2),
-(5, 'Lenovo IdeaPad3 14\"', 'Laptop', 'Lenovo specifications', 5, '423.81', 'https://i.imgur.com/Zuj59r2.jpg', 6),
-(6, 'HP 15-dy1035nr', 'Laptop', 'HP specifications', 10, '597.50', 'https://i.imgur.com/b47prqw.jpg', 10);
+INSERT INTO `inventory` (`ProductID`, `ProductName`, `ProductType`, `ProductDescription`, `Storage`, `CPU`, `DisplaySpec`, `RamSpec`, `OSSpec`, `Quantity`, `Cost`, `ProductImage`, `Quantity_Sold`) VALUES
+(1, 'Macbook Pro 16', 'Laptop', 'Apple', '512 GB SSD', '9th Generation 6-Core i7', '16-inch Retina Display', '16 GB', 'Mac OS Big Sur', 5, '2149.00', 'https://i.imgur.com/Eyi7qbk.jpg', 5),
+(2, 'Surface Pro 7', 'Tablet', 'Microsoft', '512 GB SSD', '10th Generation Intel Core i7', '12.3 inch (2736 x 1824 Resolution)', '16 GB', 'Windows 10', 10, '1318.63', 'https://i.imgur.com/E95DNBd.jpg', 4),
+(3, 'Wacom Mobile Pro 16', 'Tablet', 'Wacom', '512 GB SSD', 'Intel i7- 8559U', '16 inch', '16 GB', 'Windows 10', 10, '3392.00', 'https://i.imgur.com/o8CqxI0.jpg', 3),
+(4, 'Acer Aspire 5', 'Laptop', 'Acer', '512 GB SSD', '10th Generation Intel Core i5', '15.6 Inch (1920 x 1080 Resolution)', '8 GB', 'Windows 10 Home', 5, '364.99', 'https://i.imgur.com/jexO9p2.jpg', 2),
+(5, 'Lenovo IdeaPad3 14\"', 'Laptop', 'Lenovo', '256 GB SSD', 'AMD Ryzen 5 3500U', '14 inch (1920 x 1080 Resolution)', '8 GB', 'Windows 10', 5, '423.81', 'https://i.imgur.com/Zuj59r2.jpg', 6),
+(6, 'HP 15-dy1035nr', 'Laptop', 'HP', '1TB HHD', 'Intel Core i3-5020U ', '15.6 inch', '6GB', 'Windows 10 Home', 10, '597.50', 'https://i.imgur.com/b47prqw.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -105,20 +110,12 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `ProductID`, `Cost`, `OrderDate`,
 (1, 1, 4, '365.00', '2020-12-01', 'Delivered'),
 (2, 1, 2, '1319.00', '2020-11-30', 'Cancelled'),
 (3, 4, 4, '365.00', '2020-11-28', 'In progress'),
-(4, 3, 5, '424.00', '2020-11-15', 'Cancelled'),
-(6, 0, 5, '424.00', '2020-12-03', 'In Progress'),
-(7, 0, 5, '424.00', '2020-12-03', 'In Progress'),
-(8, 12, 4, '365.00', '2020-12-03', 'In Progress'),
-(9, 12, 6, '5975.00', '2020-12-03', 'In Progress'),
-(13, 12, 6, '5975.00', '2020-12-03', 'In Progress'),
-(14, 12, 1, '2149.00', '2020-12-03', 'In Progress'),
-(15, 0, 5, '423.81', '2020-12-03', 'In Progress'),
-(19, 0, 0, '0.00', '2020-12-03', 'In Progress'),
-(20, 0, 0, '0.00', '2020-12-04', 'In Progress'),
-(21, 0, 0, '0.00', '2020-12-04', 'In Progress'),
-(22, 0, 0, '1318.63', '2020-12-04', 'In Progress'),
-(23, 0, 0, '1318.63', '2020-12-04', 'In Progress'),
-(24, 0, 0, '1318.63', '2020-12-04', 'In Progress');
+(4, 1, 5, '424.00', '2020-11-15', 'Cancelled'),
+(6, 4, 5, '424.00', '2020-12-03', 'In Progress'),
+(7, 5, 5, '424.00', '2020-12-03', 'In Progress'),
+(8, 1, 4, '365.00', '2020-12-03', 'Cancelled'),
+(9, 1, 6, '5975.00', '2020-12-03', 'Cancelled'),
+(27, 1, 5, '423.81', '2020-12-06', 'In Progress');
 
 -- --------------------------------------------------------
 
@@ -145,7 +142,7 @@ INSERT INTO `reviews` (`ReviewID`, `Customer_ID`, `ProductID`, `ReviewDate`, `Re
 (2, 3, 2, '2020-11-25', '14:37:36', 'Product kept on blue screening!', '1'),
 (3, 5, 2, '2020-12-02', '11:10:20', 'Cheap and affordable', '4'),
 (4, 4, 2, '2020-11-28', '12:00:00', 'Met my needs for class', '5'),
-(5, 1, 1, '2020-12-09', '11:40:00', 'I would give this a 0 if I could.', '1'),
+(5, 1, 4, '2020-12-09', '11:40:00', 'I would give this a 0 if I could.', '1'),
 (6, 2, 1, '2020-11-30', '23:38:31', 'Great!', '5'),
 (7, 3, 1, '2020-12-25', '05:41:37', 'Alright for the price', '4'),
 (8, 4, 1, '2020-11-27', '13:23:37', 'You get what you expect', '2'),
@@ -156,7 +153,7 @@ INSERT INTO `reviews` (`ReviewID`, `Customer_ID`, `ProductID`, `ReviewDate`, `Re
 (13, 6, 3, '2020-11-11', '13:13:00', 'so-so', '3'),
 (14, 1, 3, '2020-11-28', '10:00:41', 'Flimsy screen', '3'),
 (15, 2, 4, '2020-11-04', '14:27:18', 'Wonderful!', '5'),
-(16, 3, 4, '2020-11-13', '11:59:39', 'Apple rocks!', '5');
+(16, 3, 1, '2020-11-13', '11:59:39', 'Apple rocks!', '5');
 
 --
 -- Indexes for dumped tables
@@ -208,7 +205,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `reviews`

@@ -40,7 +40,7 @@
             	$_SESSION['fname'] = $row['first_name'];
                 $_SESSION['lname'] = $row['last_name'];
             	$_SESSION['id'] = $row['customer_ID'];
-            	header("Location: myaccount.php");
+            	header("Location: store.php");
                     exit();
                 
             }else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 06, 2020 at 12:00 PM
+-- Generation Time: Dec 07, 2020 at 07:29 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `techcity`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `billing`
+--
+
+CREATE TABLE `billing` (
+  `PaymentID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL,
+  `Bill_Fname` varchar(30) NOT NULL,
+  `Bill_Lname` varchar(30) NOT NULL,
+  `Bill_Address` varchar(30) NOT NULL,
+  `Bill_City` varchar(30) NOT NULL,
+  `Bill_State` varchar(30) NOT NULL,
+  `Bill_Zip` varchar(30) NOT NULL,
+  `Bill_Country` varchar(30) NOT NULL,
+  `Bill_cardNumber` varchar(30) NOT NULL,
+  `Bill_Month` varchar(10) NOT NULL,
+  `Bill_Year` varchar(10) NOT NULL,
+  `Bill_CSV` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `billing`
+--
+
+INSERT INTO `billing` (`PaymentID`, `CustomerID`, `Bill_Fname`, `Bill_Lname`, `Bill_Address`, `Bill_City`, `Bill_State`, `Bill_Zip`, `Bill_Country`, `Bill_cardNumber`, `Bill_Month`, `Bill_Year`, `Bill_CSV`) VALUES
+(1, 1, 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's'),
+(2, 1, '', '', '', '', '', '', '', '', '', '', ''),
+(3, 1, 'emily', 'lin', 'bleh', 'bldh', 'blh', 'lskd', 'jksldj', 'lksdj', 'skdlj', 'dsjkljs', 'dd');
 
 -- --------------------------------------------------------
 
@@ -115,7 +146,22 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `ProductID`, `Cost`, `OrderDate`,
 (7, 5, 5, '424.00', '2020-12-03', 'In Progress'),
 (8, 1, 4, '365.00', '2020-12-03', 'Cancelled'),
 (9, 1, 6, '5975.00', '2020-12-03', 'Cancelled'),
-(27, 1, 5, '423.81', '2020-12-06', 'In Progress');
+(31, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(32, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(33, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(34, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(38, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(39, 1, 6, '597.50', '2020-12-07', 'In Progress'),
+(40, 1, 3, '3392.00', '2020-12-07', 'In Progress'),
+(41, 1, 4, '364.99', '2020-12-07', 'In Progress'),
+(42, 1, 4, '364.99', '2020-12-07', 'In Progress'),
+(43, 1, 1, '2149.00', '2020-12-07', 'In Progress'),
+(44, 1, 0, '2149.00', '2020-12-07', 'In Progress'),
+(45, 1, 0, '2149.00', '2020-12-07', 'In Progress'),
+(46, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(47, 1, 0, '1318.63', '2020-12-07', 'In Progress'),
+(48, 1, 2, '1318.63', '2020-12-07', 'In Progress'),
+(49, 1, 4, '364.99', '2020-12-07', 'In Progress');
 
 -- --------------------------------------------------------
 
@@ -160,6 +206,12 @@ INSERT INTO `reviews` (`ReviewID`, `Customer_ID`, `ProductID`, `ReviewDate`, `Re
 --
 
 --
+-- Indexes for table `billing`
+--
+ALTER TABLE `billing`
+  ADD PRIMARY KEY (`PaymentID`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -190,6 +242,12 @@ ALTER TABLE `reviews`
 --
 
 --
+-- AUTO_INCREMENT for table `billing`
+--
+ALTER TABLE `billing`
+  MODIFY `PaymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
@@ -205,7 +263,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `reviews`

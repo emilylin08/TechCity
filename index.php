@@ -2,7 +2,7 @@
     
 <!---------HEADER----------->
 <?php include('include/header.php');?>
-       
+  
 <!---------MAIN PAGE----------->  
     <div class = "row">
         <div class = "col-1">

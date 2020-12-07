@@ -91,7 +91,7 @@ if(isset($_SESSION["cart_item"])){
                 ?>
             <div class = "row row-2">
             <a></a>
-            <a style = "margin-left:40px" href="payment_con.php" class="btn"> Checkout &#10148;</a>
+            <a style = "margin-left:40px" href="payment.php" class="btn"> Checkout &#10148;</a>
             </div>
             <?php } ?>
             <div class = "row row-2">

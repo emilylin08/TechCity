@@ -63,7 +63,7 @@ if(isset($_SESSION["cart_item"])){
         <tr>
         <td><img src="<?php echo $item["image"]?>" class="cart-item-image" /><?php echo $item["ProductName"]; ?></td>
         <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-        <td  style="text-align:right;"><?php echo "$ ".$item["Cost"]; ?></td>
+        <td  style="text-align:right;"><?php echo "$ ". number_format($item["Cost"],2); ?></td>
         <td  style="text-align:right;"><?php echo "$ ". number_format($_SESSION["total"],2); ?></td>
         </tr>
 

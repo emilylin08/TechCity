@@ -42,7 +42,7 @@ if($resultCheck >0)
             <th style="text-align:left;" width="50%">Order Placed <br>
                 <?=$row["OrderDate"];?></th>
             <th style="text-align:left;" width="10%">Total <br>
-                $<?=$row["Cost"];?></th>
+                $<?=number_format($row["Cost"],2);?></th>
             <th style="text-align:left;" width="13%">Order No. <br>
                 <?=$row["OrderID"];?></th>
             <th style="text-align:left;" width="15%">Status</th>

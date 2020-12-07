@@ -25,6 +25,7 @@ include('include/header.php');
 --->
 
 <!----- Store!!!!------------>
+<body>
 <h1>All Products</h1>
 <div class="categories">
             
@@ -50,6 +51,7 @@ include('include/header.php');
     </section>       
             
 </div>
+</body>
 <!------ FOOTER-------->  
 <?php
         include('include/footer.php');

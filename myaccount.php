@@ -59,7 +59,7 @@ if($resultCheck >0)
                 }
                 else if($row["OrderStatus"] == "Delivered"){
                     echo "Delivered";
-                    ?><br><a href="writereview.php?action=review" method = "post" class="btn" value="review">Write Review</a> <?php
+                    ?><br><a href="writereview.php" method = "post" class="btn" value="review">Write Review</a> <?php
                 } else{
                     echo $row["OrderStatus"];
                 }

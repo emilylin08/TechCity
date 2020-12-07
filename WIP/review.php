@@ -1,83 +1,20 @@
-<!--THIS PAGE WILL COME AFTER clicking on respective image in STORE.PHP
-    Allows user to select quantity and add to shopping cart
-    Redirects to Shoppingcart.php
-    
-    BUG: Will not display properly if accessing it directly from live-preview
-    Must click on product image in "STORE.PHP" to display properly
-    ----------->
 <?php
+//https://www.youtube.com/watch?v=0e02dl66PYo&ab_channel=DaniKrossing
 include('include/header.php');
 ?>
-
-
-<?php
-include "include/db_conn.php";
-
-//GET DATA FROM STORE.PHP URL and database values into an array
-$productID = $_GET["productid"];
-$sql = "SELECT * FROM inventory WHERE ProductID = '$productID'";
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result)===1){
-    $product =mysqli_fetch_assoc($result);
-}
-?>
-
-
-<!-------------- PRODUCT DETAILS ------------------->
-<div align ='left'> <img src="<?php echo $product['ProductImage']?>" width="350" height="200"/></div>
-
-<h1><?php echo $product['ProductName']?></h1>
-<p><?php echo "$", $product['Cost']?></p>
-
-<form action="shoppingcart.php?action=add" method="post">
-            <label>Quantity</label>
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="<?=$product['ProductID']?>">
-            <input type="submit" value="Add to Cart" class="btnAddAction" />
-</form>
-        
-        <table class="item-table" cellpadding="10" cellspacing="1">
-            <tr>
-                <th style="text-align:left;" width="50%">Model:</th>
-                <th style="text-align:left;" width="50%"><?=$product['ProductDescription']?></th>
-            </tr>
-            <tr>
-                <th style="text-align:left;" width="50%">Storage:</th>
-                <th style="text-align:left;" width="50%"><?=$product['Storage']?></th>
-            </tr>
-            <tr>
-                <th style="text-align:left;" width="50%">CPU:</th>
-                <th style="text-align:left;" width="50%"><?=$product['CPU']?></th> 
-            </tr>
-            <tr>
-                <th style="text-align:left;" width="50%">Display:</th>
-                <th style="text-align:left;" width="50%"><?=$product['DisplaySpec']?></th> 
-            </tr>
-            <tr>
-                <th style="text-align:left;" width="50%">Ram:</th>
-                <th style="text-align:left;" width="50%"><?=$product['RamSpec']?></th> 
-            </tr>
-            <tr>
-                <th style="text-align:left;" width="50%">Operating System:</th>
-                <th style="text-align:left;" width="50%"><?=$product['OSSpec']?></th> 
-            </tr>
-        </table>
-
-
-
-<!-------------- REVIEWS INFORMATION ------------------->
-<?php
+  
+   <?php
     $mytime = getdate(date("U"));
     $date = "$mytime[month] $mytime[mday], $mytime[year]";
 
     require "include/db_conn.php";
         
 //calculates number of reviews
-        $sql = $conn->query("SELECT customer_ID FROM reviews WHERE ProductID = $productID");
+        $sql = $conn->query("SELECT customer_ID FROM reviews");
         $numR = $sql->num_rows;
 
 //calculates total sum of all reviews to calculate average review
-        $sql = $conn->query("SELECT SUM(ReviewRating) AS total FROM reviews WHERE ProductID = $productID");
+        $sql = $conn->query("SELECT SUM(ReviewRating) AS total FROM reviews");
         $data = $sql->fetch_array();
         $total = $data["total"];
         $avg = "";
@@ -92,11 +29,10 @@ if(mysqli_num_rows($result)===1){
             else{
                 $avg = 0;
             }
-//calculates number of reviews per rating
-        $sql = $conn->query("SELECT Count(*) AS number FROM reviews WHERE ReviewRating = 5");
-        $data = $sql->fetch_array();
-        $value = $data["number"];
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <!------REVIEW STARS------------->
     <div class="container">
@@ -123,47 +59,72 @@ if(mysqli_num_rows($result)===1){
                     <p class="rars"><?php if($numR == 0){echo "NO";}else{echo $numR;} ?> Reviews</p>
                     </div>
                     </td>
-<!------REVIEW BREAKDOWN------------->
                 <td>
-        <div class="rpb">
-        <?php
-        //calculates TOTAL NUMBER of review for this product
-        $sql = $conn->query("SELECT Count(*) AS totalreview FROM reviews WHERE ProductID = $productID");
-        $data = $sql->fetch_array();
-        $totalnum = $data["totalreview"];
-        
-        if($totalnum>0)
-        {
-          foreach(array_reverse(range(1,5), TRUE) as $key => $value)
-                {
-                //calculates number of reviews per SPECIFIC RATING
-                $sql = $conn->query("SELECT Count(*) AS number FROM reviews WHERE ReviewRating = $value AND ProductID = $productID");
-                $data = $sql->fetch_array();
-                $numReview = $data["number"];
-
-                //Calculates width of rating bar
-                $width = 100 * $numReview / $totalnum;
-                    ?>
-                    <div class="rnpb">
-                 <label><?=$value?><i class="fa fa-star"></i></label> 
-                    <div class="ropb">
-                        <div class="ripb" style="width: <?=$width;?>%"></div>
+<!------REVIEW BREAKDOWN------------->
+                    <div class="rpb">
+                    <?php
+                    foreach(array_reverse(range(1,5), TRUE) as $key => $value)
+                    {
+                    //calculates number of reviews per rating
+                    $sql = $conn->query("SELECT Count(*) AS number FROM reviews WHERE ReviewRating = $value");
+                    $data = $sql->fetch_array();
+                    $numReview = $data["number"];
+                        ?>
+                        <div class="rnpb">
+                     <label><?=$value?><i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 20%"></div>
+                        </div>
+                        <div class="label">(<?=$numReview;?>)</$value?></div>
+                        </div>
+                            <?php
+                    }
+                        ?>
+                        <!-----
+                        <div class="rnpb">
+                     <label>5<i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 20%"></div>
+                        </div>
+                        <div class="label">(1)</div>
+                        </div>
+                         <div class="rnpb">
+                     <label>4<i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 50%"></div>
+                        </div>
+                        <div class="label">(1)</div>
+                        </div>
+                         <div class="rnpb">
+                     <label>3<i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 80%"></div>
+                        </div>
+                        <div class="label">(15)</div>
+                        </div>
+                         <div class="rnpb">
+                     <label>2<i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 30%"></div>
+                        </div>
+                        <div class="label">(11)</div>
+                        </div>
+                         <div class="rnpb">
+                     <label>1<i class="fa fa-star"></i></label> 
+                        <div class="ropb">
+                            <div class="ripb" style="width: 40%"></div>
+                        </div>
+                        <div class="label">(13)</div>
+                        </div>
+                        
+                        --->
                     </div>
-                    <div class="label">(<?=$numReview;?>)</$value?></div>
-                    </div>
-                        <?php
-                }  
-        } else {
-            echo "No reviews";
-        }
-        
-            ?>
-        </div>
-        </td>
-    <td>
+                    </td>
+                <td>
 <!------BUTTON TO SUBMIT REVIEW------------->
                     <div class="rrb">
-                    
+                    <p>Please Review Our Product</p>
+                        <button class="rbtn opmd"> Add Review</button>
                     </div>
                     </td>
                 </tr>
@@ -200,7 +161,7 @@ if(mysqli_num_rows($result)===1){
             
 <!------DISPLAY EXISTING REVIEWS------------->
         <?php
-            $sqlreview = "SELECT * from reviews WHERE productID = $productID";
+            $sqlreview = "SELECT * from reviews";
             $result = mysqli_query($conn, $sqlreview);
             $resultCheck = mysqli_num_rows($result);
             if($resultCheck >0)
@@ -248,10 +209,11 @@ if(mysqli_num_rows($result)===1){
             </div>
         </div>
         </div>
-        
-
-<!------ FOOTER-------->  
+        <script src="main.js"></script>
+    </body>
+    <html></html>
+    
+   <!------ FOOTER-------->  
 <?php
         include('include/footer.php');
-
 ?>

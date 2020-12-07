@@ -6,7 +6,7 @@
 body{ 
     font-family: 'Cairo', sans-serif;
     min-height: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 400px;
     clear: both;
 }
 
@@ -205,7 +205,7 @@ nav ul li{
     cursor: pointer;
     vertical-align: top;
     font-weight: bold;
-    postion:absolute;
+    position:absolute;
 }
 .cart-action {
     margin-left: 150px;
@@ -349,4 +349,10 @@ nav ul li{
     border-style: groove;
     border-radius: 20px;
     border-color: #ADD8E6;
+}
+    
+#reviewtext {
+    width: 300px;
+    height: 300px;
+    align-content: flex-start;
 }

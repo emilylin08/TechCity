@@ -21,7 +21,7 @@
             <label>Username:</label>
               <input type="text" id="username" name="uname" placeholder = "User Name"><br>
             <label>Password: </label>
-              <input type="text" id="password" name="password" placeholder="Password">
+              <input type="password" id="password" name="password" placeholder="Password">
               <br>
             <input type="submit" class="page-btn" value="Login">
           </a>
